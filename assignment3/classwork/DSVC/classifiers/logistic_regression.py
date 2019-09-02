@@ -17,8 +17,6 @@ class LogisticRegression(object):
         theta = self.w.reshape(-1,1)
         y = y.reshape(-1,1)                         #theta[n,1]  y[m,1]  x[m,n]
         h = self.sigmoid(x.dot(theta))               #h[m,1]
-        print(np.sum((1-h) == np.sum(np.zeros_like(h))))
-        print(np.sum((h) == np.sum(np.zeros_like(h))))
         cost = -y.T.dot(np.log(h))-(1-y).T.dot(np.log(1-h))     
         return cost[0][0]/m
 
@@ -109,8 +107,8 @@ class LogisticRegression(object):
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
-            #if verbose and it % 100 == 0:
-            print('iteration %d / %d: loss %f' % (it, num_iters, loss))
+            if verbose and it % 10 == 0:
+                print('iteration %d / %d: loss %f' % (it, num_iters, loss))
             
 
         return loss_history
