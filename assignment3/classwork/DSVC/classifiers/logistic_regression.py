@@ -107,7 +107,7 @@ class LogisticRegression(object):
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
-            if verbose and it % 10 == 0:
+            if verbose and it % 100 == 0:
                 print('iteration %d / %d: loss %f' % (it, num_iters, loss))
             
 
